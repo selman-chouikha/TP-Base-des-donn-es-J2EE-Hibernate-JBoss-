@@ -13,19 +13,19 @@
             <dependent-object/>
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="twitter4j-async-4.0.4.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/Users/Selman/Documents/TP Base des donnees/TwitterApiConsumeEJB/lib/twitter4j-async-4.0.4.jar">
+        <dependent-module archiveName="twitter4j-examples-4.0.4.jar" deploy-path="/lib" handle="module:/classpath/lib/TwitterApiConsumeEJB/lib/twitter4j-examples-4.0.4.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="twitter4j-stream-4.0.4.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/Users/Selman/Documents/TP Base des donnees/TwitterApiConsumeEJB/lib/twitter4j-stream-4.0.4.jar">
+        <dependent-module archiveName="twitter4j-core-4.0.4.jar" deploy-path="/lib" handle="module:/classpath/lib/TwitterApiConsumeEJB/lib/twitter4j-core-4.0.4.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="twitter4j-core-4.0.4.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/Users/Selman/Documents/TP Base des donnees/TwitterApiConsumeEJB/lib/twitter4j-core-4.0.4.jar">
+        <dependent-module archiveName="twitter4j-stream-4.0.4.jar" deploy-path="/lib" handle="module:/classpath/lib/TwitterApiConsumeEJB/lib/twitter4j-stream-4.0.4.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="twitter4j-media-support-4.0.4.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/Users/Selman/Documents/TP Base des donnees/TwitterApiConsumeEJB/lib/twitter4j-media-support-4.0.4.jar">
+        <dependent-module archiveName="twitter4j-async-4.0.4.jar" deploy-path="/lib" handle="module:/classpath/lib/TwitterApiConsumeEJB/lib/twitter4j-async-4.0.4.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="twitter4j-examples-4.0.4.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/Users/Selman/Documents/TP Base des donnees/TwitterApiConsumeEJB/lib/twitter4j-examples-4.0.4.jar">
+        <dependent-module archiveName="twitter4j-media-support-4.0.4.jar" deploy-path="/lib" handle="module:/classpath/lib/TwitterApiConsumeEJB/lib/twitter4j-media-support-4.0.4.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
     </wb-module>
