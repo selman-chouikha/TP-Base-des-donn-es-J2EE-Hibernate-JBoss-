@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if !IE]><!-->
@@ -27,11 +29,12 @@
 			<form id="form-1" action="users.php" method="post">
 				<div class="form-group">
 					<label for="inputdefault">ID utilisateur</label> <input
-						id="id-user-input" placeholder="id twitter" class="form-control" name="id">
+						id="id-user-input" placeholder="id twitter" class="form-control"
+						name="id">
 				</div>
-				<input type="checkbox" id="add-follow"> Enregister quelques
-				followers avec<br>
 				<div class="form-group">
+				<input type="checkbox" id="add-follow"> Enregister aussi ses
+				followers<br>
 					<button class="btn btn-primary" id="add-user" name="action">Enregistrer</button>
 				</div>
 			</form>

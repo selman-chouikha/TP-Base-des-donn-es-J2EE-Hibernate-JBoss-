@@ -6,13 +6,8 @@
 
 <hr>
 <div class="container">
-	<div class="row">
-		<div class="btn-toolbar col-md-1">
-			<button class="btn btn-primary" id="menu-toggle">Ajouter</button>
+	<h6>Followers de ${name}</h6>
 
-		</div>
-		<div class="col-md-5">${exception}</div>
-	</div>
 	<!-- Users attributes -->
 	<div class="row" id="users-wrapper">
 		<!-- Users table -->
@@ -24,33 +19,35 @@
 						<th class="col-md-6">Screen Name</th>
 					</tr>
 				</thead>
-				<c:if test="${empty users}">
+				<c:if test="${empty followers}">
 					<tr>
 						<td colspan="2" align="center" style="font-weight: bold;">
 							Aucun Utilisateur enregistré</td>
 					</tr>
 				</c:if>
-				<c:if test="${not empty users}">
+				<c:if test="${not empty followers}">
 					<tbody>
-						<c:forEach items="${users}" var="user" varStatus="indexUser">
+						<c:forEach items="${followers}" var="follower"
+							varStatus="indexUser">
 							<tr class="row" id="${indexUser.index}">
-								<td class="col-md-6">${user.name}</td>
-								<td class="col-md-6">@${user.screenName}</td>
+								<td class="col-md-6">${follower.name}</td>
+								<td class="col-md-6">@${follower.screenName}</td>
 							</tr>
 							<input type="hidden" name="id" id="id_${indexUser.index}"
-								value="${user.id}">
+								value="${follower.id}">
 							<input type="hidden" name="name" id="name_${indexUser.index}"
-								value="${user.name}">
+								value="${follower.name}">
 							<input type="hidden" name="screen" id="screen_${indexUser.index}"
-								value="${user.screenName}">
+								value="${follower.screenName}">
 							<input type="hidden" name="date" id="date_${indexUser.index}"
-								value="${user.date.jour}-${user.date.mois}-${user.date.annee} à ${user.date.time}">
+								value="${follower.date.jour}-${follower.date.mois}-${follower.date.annee} à ${follower.date.time}">
 							<input type="hidden" name="description"
-								id="description_${indexUser.index}" value="${user.description}">
+								id="description_${indexUser.index}"
+								value="${follower.description}">
 							<input type="hidden" name="location"
-								id="location_${indexUser.index}" value="${user.location}">
+								id="location_${indexUser.index}" value="${follower.location}">
 							<input type="hidden" name="url" id="url_${indexUser.index}"
-								value="${user.url}">
+								value="${follower.url}">
 						</c:forEach>
 
 					</tbody>
@@ -84,13 +81,6 @@
 				<h3 class="col-md-6">URL :</h3>
 				<div id="url-utilisateur" class="col-md-6"></div>
 			</div>
-			<div class="row">
-				<button class="btn btn-primary col-md-6" id="add-tweet"
-					name="action">Tweets</button>
-				<button class="btn btn-primary col-md-6" id="add-follower"
-					name="action">Followers</button>
-			</div>
-
 		</div>
 		<!-- End User description -->
 	</div>

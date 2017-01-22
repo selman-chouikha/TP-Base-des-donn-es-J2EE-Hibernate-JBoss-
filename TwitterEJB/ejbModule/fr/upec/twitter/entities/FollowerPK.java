@@ -11,6 +11,11 @@ import javax.persistence.ManyToOne;
 @Embeddable
 public class FollowerPK implements Serializable {
 
+	/**
+	 * AUTO GENERATED ID
+	 */
+	private static final long serialVersionUID = 2642855742332288996L;
+	
 	@ManyToOne(targetEntity = TwitterUser.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "USER_ID", referencedColumnName = "USER_ID")
 	private TwitterUser user;

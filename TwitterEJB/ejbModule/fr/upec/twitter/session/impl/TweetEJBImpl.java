@@ -20,9 +20,7 @@ public class TweetEJBImpl implements ITweetLocal, ITweetRemote {
 
 	@Override
 	public void addTweet(Tweet tweet) {
-
 			em.merge(tweet);
-
 	}
 
 	@Override

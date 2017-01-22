@@ -10,24 +10,30 @@ import javax.persistence.Table;
 @Table(name = "FOLLOWER")
 public class Follower implements Serializable {
 
+	/**
+	 * AUTO GENERATED ID
+	 */
+	private static final long serialVersionUID = 4733674142030838656L;
+	
 	@EmbeddedId
-	FollowerPK primaryKey;
+	private FollowerPK primaryKey;
 
 	public Follower() {
 		super();
 	}
 
-	public Follower(FollowerPK primaryKey) {
+	public Follower(TwitterUser user, TwitterUser follower) {
 		super();
-		this.primaryKey = primaryKey;
+		primaryKey = new FollowerPK(user, follower);
 	}
 
-	public FollowerPK getPrimaryKey() {
-		return primaryKey;
+	public TwitterUser getUser() {
+		return primaryKey.getUser();
 	}
 
-	public void setPrimaryKey(FollowerPK primaryKey) {
-		this.primaryKey = primaryKey;
+
+	public TwitterUser getFollower() {
+		return primaryKey.getFollower();
 	}
 
 }

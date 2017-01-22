@@ -17,13 +17,17 @@ public class Tweet implements Serializable {
 
 	@Id
 	@Column(name = "TWEET_ID")
-	private long id;
+	private Long id;
 	@Column(name = "NB_OF_LIKES")
 	private int nbOfLikes;
 	@Column(name = "TEXT")
 	private String text;
 	@Column(name = "TYPE")
 	private String type; // Type text,jpg,gif..
+
+	@Column(name = "TYPE_TWEET")
+	private String typeTweet;
+	
 	@ManyToOne(targetEntity = TwitterUser.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "USER_ID", referencedColumnName = "USER_ID")
 	private TwitterUser user;
@@ -36,16 +40,12 @@ public class Tweet implements Serializable {
 	@JoinColumn(name = "LIEN", referencedColumnName = "LIEN_MEDIA")
 	private Media lien;
 
-	@ManyToOne(targetEntity = TypeTweet.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "TYPE_TWEET", referencedColumnName = "TYPE_ID")
-	private TypeTweet typeTweet;
-
 	public Tweet() {
 		super();
 	}
 
-	public Tweet(long id, int nbOfLikes, String text, String type, TwitterUser user, CustomDate date, Media lien,
-			TypeTweet typeTweet) {
+	public Tweet(Long id, int nbOfLikes, String text, String type, TwitterUser user, CustomDate date, Media lien,
+			String typeTweet) {
 		super();
 		this.id = id;
 		this.nbOfLikes = nbOfLikes;
@@ -57,11 +57,11 @@ public class Tweet implements Serializable {
 		this.typeTweet = typeTweet;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -105,11 +105,11 @@ public class Tweet implements Serializable {
 		this.lien = lien;
 	}
 
-	public TypeTweet getTypeTweet() {
+	public String getTypeTweet() {
 		return typeTweet;
 	}
 
-	public void setTypeTweet(TypeTweet typeTweet) {
+	public void setTypeTweet(String typeTweet) {
 		this.typeTweet = typeTweet;
 	}
 

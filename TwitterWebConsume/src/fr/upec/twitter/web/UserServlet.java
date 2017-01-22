@@ -37,7 +37,6 @@ public class UserServlet extends HttpServlet {
 		if (action != null) {
 			if (action.equals("add")) {
 				Long id = Long.parseLong(req.getParameter("id"));
-				
 				try {
 					twitterAPISession.saveUser(id);
 				} catch (Exception e) {
@@ -45,23 +44,21 @@ public class UserServlet extends HttpServlet {
 				}
 			}
 			if (action.equals("addAll")) {
-				Long id = Long.parseLong(req.getParameter("id"));
-				
+				Long id = Long.parseLong(req.getParameter("id"));	
 				twitterAPISession.saveUserAndFollowers(id);
+			}
+			if (action.equals("addFollowers")) {
+				Long id = Long.parseLong(req.getParameter("id"));
+				twitterAPISession.saveUserFollowers(id);
+				TwitterUser user = userSession.getUser(id);
+				resp.sendRedirect("/TwitterWebConsume/followers.php?name="+user.getName()+"&id="+id);
+			
 			}
 			if (action.equals("addTweets")) {
 				Long id = Long.parseLong(req.getParameter("id"));
 				TwitterUser user = userSession.getUser(id);
 				twitterAPISession.saveTweets(user);
-			}
-			if (action.equals("getTweets")) {
-				Long id = Long.parseLong(req.getParameter("id"));
-				List<Tweet> tweets = twitterSession.getAllTweetsForUser(id);
-				resp.getWriter().println(tweets.toString());;
-			}
-			if (action.equals("supp")) {
-				Long id = Long.parseLong(req.getParameter("id"));
-				userSession.remove(id);
+				resp.sendRedirect("/TwitterWebConsume/tweets.php?name="+user.getName()+"&id="+id);
 			}
 		}
 		req.setAttribute("users", userSession.getAllUsers());
